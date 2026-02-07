@@ -132,3 +132,102 @@ html{
             height: 200px;
             background: white;
             z-index: 2;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px;
+            box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .envelope.open .card {
+            transform: translateY(-100px);
+            height: auto;
+            min-height: 400px;
+            z-index: 5;
+        }
+
+        /* Typography & Content */
+        .intro-text {
+            font-family: var(--serif);
+            color: #444;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            animation: fadeInDown 1s ease-out; /* Added animation */
+        }
+
+        .main-question {
+            font-family: var(--serif);
+            font-size: 24px;
+            font-style: italic;
+            color: var(--deep-rose);
+            margin: 15px 0;
+            animation: shimmer 2s infinite ease-in-out; /* Added shimmer */
+        }
+
+        .secondary-text {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .cat-gif {
+            width: 150px;
+            border-radius: 8px;
+            margin: 10px 0;
+            display: none;
+            animation: fadeInDown 0.5s ease; /* Added fade */
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border: 1px solid var(--deep-rose);
+            background: white;
+            color: var(--deep-rose);
+            font-family: var(--mono);
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 100;
+            border-radius: 50px; /* Softer edges */
+        }
+
+        #yesBtn {
+            background: var(--deep-rose);
+            color: white;
+            animation: heartbeat 1.5s infinite; /* Heartbeat effect */
+            box-shadow: 0 4px 15px rgba(224, 142, 157, 0.4);
+        }
+
+        #noBtn:active {
+            animation: shake 0.2s ease; /* Shakes when clicked */
+        }
+
+        /* Success Stage */
+        .celebration {
+            display: none;
+            text-align: center;
+            z-index: 20;
+        }
+
+        .success-title {
+            font-family: var(--serif);
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hidden { display: none; }
