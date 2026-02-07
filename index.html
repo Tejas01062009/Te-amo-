@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VQLDXC306Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VQLDXC306Z');
+</script>
+    <title>A Special Message For You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="hearts-bg"></div>
+
+    <div class="envelope-container" id="app-container">
+        
+        <h2 class="intro-text" id="intro-heading">Isse open karo na pls 🥺?</h2>
+
+        <div class="envelope" id="envelope">
+            <div class="flap"></div>
+            <div class="card" id="card">
+                <span class="secondary-text">Private Invitation</span>
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmFvdHl1a2Nuc3NzcHhza2hybmwycWdxazR3MGw5a3VqaHd0Y3pwaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OocLVILtd7ybm/giphy.gif" class="cat-gif" id="cat-gif">
+                <h1 class="main-question">Will you be my Valentine? ❤️</h1>
+                
+                <div class="btn-group" id="final-choice" style="display: none;">
+                    <button class="btn" id="yesBtn" onclick="celebrate()">Yes</button>
+                    <button class="btn" id="noBtn" onclick="handleNo()">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group" id="initial-choice">
+            <button class="btn" onclick="openEnvelope()" style="background: var(--deep-rose); color: white; animation: heartbeat 1.5s infinite;">Yes</button>
+            <button class="btn" onclick="alert('Don\'t be shy! Click Yes. 😉')">No</button>
+        </div>
+
+    </div>
+
+    <div id="success-screen" class="celebration">
+        <h1 class="success-title">I knew you would say YES! 💖</h1>
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGppNXRvdThydWUwcDFyZTF2bzFjeTBhMWZsdHh4bzR6MGlkd3R4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/udiIFmPkJQzkI/giphy.gif" style="width: 300px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
