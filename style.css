@@ -1,0 +1,134 @@
+:root {
+            --pastel-pink: #FFD1DC;
+            --deep-rose: #E08E9D;
+            --gold: #D4AF37;
+            --cream: #FFF9FA;
+            --serif: 'Bodoni Moda', serif;
+            --mono: 'Space Mono', monospace;
+        }
+html{
+  height: 100%;
+    background-color: var(--pastel-pink);
+}
+
+        body {
+           margin: 0;
+    min-height: 100vh;
+    background-color: var(--pastel-pink);
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+        }
+        /* --- NEW ANIMATIONS --- */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.05); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            70% { transform: scale(1); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shimmer {
+            0% { color: var(--deep-rose); }
+            50% { color: #ff5e7a; text-shadow: 0 0 10px rgba(224, 142, 157, 0.5); }
+            100% { color: var(--deep-rose); }
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: absolute;
+            color: white;
+            opacity: 0.6;
+            user-select: none;
+            pointer-events: none;
+            animation: floatUp 5s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(110vh) scale(0.5); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Stage 1: The Envelope */
+        .envelope-container {
+            position: relative;
+            perspective: 1000px;
+            z-index: 10;
+            animation: riseIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes riseIn {
+            from { transform: translateY(100vh) rotate(-5deg); }
+            to { transform: translateY(0) rotate(0deg); }
+        }
+
+        .envelope {
+            width: 350px;
+            height: 230px;
+            background: var(--deep-rose);
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* The Seal/Flap */
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 175px solid transparent;
+            border-right: 175px solid transparent;
+            border-top: 140px solid var(--deep-rose);
+            transform-origin: top;
+            transition: transform 0.6s ease;
+            z-index: 4;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+        }
+
+        .flap::after {
+            content: '';
+            position: absolute;
+            top: -140px;
+            left: -175px;
+            width: 0;
+            height: 0;
+            border-left: 175px solid transparent;
+            border-right: 175px solid transparent;
+            border-top: 140px solid #f9e29f;
+            opacity: 0.4;
+            transform: scale(0.98);
+        }
+
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        /* The Card inside */
+        .card {
+            position: absolute;
+            width: 320px;
+            height: 200px;
+            background: white;
+            z-index: 2;
